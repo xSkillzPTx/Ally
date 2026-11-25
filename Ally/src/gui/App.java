@@ -18,7 +18,7 @@ public class App {
     }
 
     SwingUtilities.invokeLater(() -> {
-      LoginDialog login = new LoginDialog(null, blockChain);
+      LoginDialog login = new LoginDialog(null);
       login.setVisible(true); // modal: espera aqui até a janela fechar
 
       if (login.getPrivateKey() == null) { // cancelou / fechou a janela
@@ -26,6 +26,8 @@ public class App {
       }
 
       System.out.println("Entrou " + login.getIdentity().getName() + " como " + login.getRole());
+      MainScreen screen = new MainScreen();
+      screen.setVisible(true);
       // TODO: abrir a janela principal (MainScreen) com o papel e as chaves
     });
   }

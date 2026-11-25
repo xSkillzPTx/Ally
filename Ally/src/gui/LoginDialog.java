@@ -42,9 +42,9 @@ public class LoginDialog extends JDialog {
   private DigitalID identity;
   private Role role;
 
-  public LoginDialog(Frame owner, BlockChain chain) {
+  public LoginDialog(Frame owner) {
     super(owner, "Ally - Login", true);
-    this.blockChain = chain;
+    this.blockChain = BlockChain.getInstance();
     setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
     JButton btnBrowse = new JButton("...");
@@ -88,7 +88,7 @@ public class LoginDialog extends JDialog {
   }
 
   private void register() {
-    RegisterDialog reg = new RegisterDialog(this, blockChain);
+    RegisterDialog reg = new RegisterDialog(this);
     reg.setVisible(true);
     // se criou uma identidade, preenche logo o caminho
     if (reg.getCreatedPath() != null) {

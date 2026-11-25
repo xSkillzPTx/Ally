@@ -30,9 +30,9 @@ public class RegisterDialog extends JDialog {
   /** caminho da identidade criada (sem extensão), ou null se não foi criada */
   private String createdPath;
 
-  public RegisterDialog(Window owner, BlockChain chain) {
+  public RegisterDialog(Window owner) {
     super(owner, "Criar identidade", ModalityType.APPLICATION_MODAL);
-    this.blockChain = chain;
+    this.blockChain = BlockChain.getInstance();
     setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
     JButton btnCreate = new JButton("Criar identidade");
