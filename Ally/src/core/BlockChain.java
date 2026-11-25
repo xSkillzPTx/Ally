@@ -27,7 +27,13 @@ public class BlockChain {
   public static final String FILENAME = "blockchain.bc";
   ArrayList<Block> chain = new ArrayList<>();
 
-  public BlockChain() throws IOException {
+  private static final BlockChain instance = new BlockChain();
+
+  public static BlockChain getInstance() {
+    return instance;
+  }
+
+  public BlockChain() {
     // ler a blockchain apartir do ficheiro
     try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(FILENAME))) {
       chain = (ArrayList<Block>) in.readObject();
