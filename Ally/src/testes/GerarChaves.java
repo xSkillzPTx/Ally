@@ -15,20 +15,21 @@ import utils.SecurityUtils;
  */
 public class GerarChaves {
 
-    /**
-     * @param args the command line arguments
-     */
-    /*public static void main(String[] args) throws Exception {
-        //Gerar o par de chaves RSA com 2048 bits
-        KeyPair par = SecurityUtils.generateKeyPair(2048);
+  /**
+   * @param args the command line arguments
+   */
 
-        // Separar as duas chaves
-        PublicKey pub = par.getPublic();
-        PrivateKey priv = par.getPrivate();
+  public static void main(String[] args) throws Exception {
+    // Gerar o par de chaves RSA com 2048 bits
+    KeyPair par = SecurityUtils.generateKeyPair(2048);
 
-        //gravar cada uma das chaves num ficheiro
-        SecurityUtils.savePublicKey(pub, "Financas");
-        SecurityUtils.savePrivateKey(priv, "Financas", "123qwe");
-    }
-*/ //está comentado porque senão ia gerar chaves novas por cima das antigas
+    // Separar as duas chaves
+    PublicKey pub = par.getPublic();
+    PrivateKey priv = par.getPrivate();
+
+    // gravar cada uma das chaves num ficheiro
+    SecurityUtils.savePublicKey(pub, "Financas");
+    SecurityUtils.savePrivateKey(priv, "Financas", "123qwe");
+  }
+  // está comentado porque senão ia gerar chaves novas por cima das antigas
 }
