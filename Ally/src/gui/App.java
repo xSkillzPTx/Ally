@@ -4,9 +4,9 @@ import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 
 import core.BlockChain;
+import digitalID.core.DigitalID;
 
 public class App {
-
   public static void main(String[] args) {
     BlockChain blockChain;
     try {
@@ -26,9 +26,10 @@ public class App {
       }
 
       System.out.println("Entrou " + login.getIdentity().getName() + " como " + login.getRole());
+      DigitalID.setCurrentID(login.getIdentity());
+
       MainScreen screen = new MainScreen();
       screen.setVisible(true);
-      // TODO: abrir a janela principal (MainScreen) com o papel e as chaves
     });
   }
 }

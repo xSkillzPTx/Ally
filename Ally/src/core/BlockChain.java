@@ -23,9 +23,9 @@ import utils.SecurityUtils;
  */
 public class BlockChain {
 
-  public static int DIFICUTLY = 3;
-  public static final String FILENAME = "blockchain.bc";
-  ArrayList<Block> chain = new ArrayList<>();
+  public static final int DIFICUTLY = 3;
+  private static final String FILENAME = "blockchain.bc";
+  private ArrayList<Block> chain = new ArrayList<>();
 
   private static final BlockChain instance = new BlockChain();
 

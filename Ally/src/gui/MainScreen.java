@@ -7,6 +7,7 @@ import javax.swing.JLabel;
 
 import core.Block;
 import core.BlockChain;
+import digitalID.core.DigitalID;
 
 public class MainScreen extends JFrame {
   private BlockChain blockChain = BlockChain.getInstance();
@@ -15,7 +16,7 @@ public class MainScreen extends JFrame {
   public MainScreen() {
     this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     this.setBounds(new Rectangle(200, 200));
-    title = new JLabel(blockChain.toString());
+    this.title = new JLabel(DigitalID.getCurrentID().getName());
     this.add(title);
   }
 }
